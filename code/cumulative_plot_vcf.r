@@ -15,7 +15,7 @@ AF_df$alt = as.character(unlist(alt(vcf_chunk)))
 AF_df_snv = AF_df[which(AF_df$ref %in% c("A","G","C","T") & AF_df$alt %in% c("A","G","C","T")),]
 AF_df_snv$subst = paste(AF_df_snv$ref, AF_df_snv$alt, sep="")
 
-# compute only the 6 non-equivalent substitutions 
+# compute only the 6 non-equivalent substitutions
 AF_df_snv[which(AF_df_snv$subst == "TC"),"subst"] = "AG"
 AF_df_snv[which(AF_df_snv$subst == "TG"),"subst"] = "AC"
 AF_df_snv[which(AF_df_snv$subst == "TA"),"subst"] = "AT"
@@ -40,6 +40,10 @@ prop_subst = matrix(unlist(l), ncol = af_length, byrow = F)
 rownames(prop_subst) = c("AG","AC","AT","CA","CG","CT")
 
 pdf("substitutions_proportion_by_AF.pdf",10,5)
+par(lwd = 0.25)
+layout(matrix(c(1,1,1,1,2), 1, 5, byrow = TRUE))
 barplot(prop_subst, col = rainbow(length(rownames(prop_subst))), space=0)
 axis(1,labels=AF_classes, at=c(0, seq(1:af_length)))
+plot(1, type="n", axes=FALSE, xlab="", ylab="")
+legend("topright", legend=c("AG","AC","AT","CA","CG","CT"), col = rainbow(length(rownames(prop_subst))), pch=19)
 dev.off()
