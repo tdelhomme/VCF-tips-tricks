@@ -5,7 +5,7 @@ input_vcf = "input.vcf.gz"
 allelic_fractions_field = "AF"
 af_length = 100
 
-# contruct a prop barplot for substitutions by AF
+# contruct a prop barplot for substitutions stratified by AF
 
 vcf <- open(VcfFile(input_vcf,  yieldSize=1000000))
 vcf_chunk = readVcf(vcf, "hg19")
