@@ -23,4 +23,4 @@ Command line example:
 cumulative_plot_vcf.r --input_vcf=path_input_vcf_file.vcf
 ```
 
-[Here](https://github.com/tdelhomme/VCF-tips-tricks/blob/master/plots/substitutions_proportion_by_AF.pdf) is an example of output.  
+[Here](https://github.com/tdelhomme/VCF-tips-tricks/blob/master/plots/substitutions_proportion_by_AF.png) is an example of output.  
