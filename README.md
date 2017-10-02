@@ -17,3 +17,10 @@ The input parameters are :
   * __nCPU__ (default=1)
   * __nb_classes__ (default=100)
   * __AF_field__ (default=AF)
+
+Command line example:
+```
+cumulative_plot_vcf.r --input_vcf=path_input_vcf_file.vcf
+```
+
+[Here](https://github.com/tdelhomme/VCF-tips-tricks/blob/master/plots/substitutions_proportion_by_AF.pdf) is an example of output.  
