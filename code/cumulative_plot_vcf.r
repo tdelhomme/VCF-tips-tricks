@@ -1,3 +1,5 @@
+#! /usr/bin/env Rscript
+
 library(VariantAnnotation)
 
 # parse input parameters
@@ -9,11 +11,11 @@ names(argsL) <- as.data.frame(do.call("rbind", parseArgs(args)))$V1
 args <- argsL;rm(argsL)
 
 if(is.null(args$input_vcf)) {stop("no input VCF file")} else {input_vcf = args$input_vcf}
-if(is.null(args$nb_classes)) {nb_classes = 100)} else {nb_classes = as.numeric(args$nb_classes)}
-if(is.null(args$AF_field)) {AF_field = "AF")} else {AF_field = args$AF_field)}
-if(is.null(args$min_AF)) {min_AF = 0)} else {min_AF = as.numeric(args$min_AF)}
-if(is.null(args$max_AF)) {max_AF = 1)} else {max_AF = as.numeric(args$max_AF)}
-if(is.null(args$nCPU)) {nCPU = 1)} else {nCPU = as.numeric(args$nCPU)}
+if(is.null(args$nb_classes)) {nb_classes = 100} else {nb_classes = as.numeric(args$nb_classes)}
+if(is.null(args$AF_field)) {AF_field = "AF"} else {AF_field = args$AF_field}
+if(is.null(args$min_AF)) {min_AF = 0} else {min_AF = as.numeric(args$min_AF)}
+if(is.null(args$max_AF)) {max_AF = 1} else {max_AF = as.numeric(args$max_AF)}
+if(is.null(args$nCPU)) {nCPU = 1} else {nCPU = as.numeric(args$nCPU)}
 
 # contruct a prop barplot for substitutions stratified by AF
 
@@ -54,7 +56,7 @@ rownames(prop_subst) = c("AG","AC","AT","CA","CG","CT")
 pdf("substitutions_proportion_by_AF.pdf",10,5)
 par(lwd = 0.25)
 layout(matrix(c(1,1,1,1,2), 1, 5, byrow = TRUE))
-barplot(prop_subst, col = rainbow(length(rownames(prop_subst))), space=0)
+barplot(prop_subst, col = rainbow(length(rownames(prop_subst))), space=0, xlab="AF", ylab="Proportion")
 axis(1,labels=AF_classes, at=c(0, seq(1:nb_classes)))
 plot(1, type="n", axes=FALSE, xlab="", ylab="")
 legend("topright", legend=c("AG","AC","AT","CA","CG","CT"), col = rainbow(length(rownames(prop_subst))), pch=19)
