@@ -53,7 +53,7 @@ rownames(prop_subst) = c("AG","AC","AT","CA","CG","CT")
 
 # output the resulting PDF plot
 
-pdf("substitutions_proportion_by_AF.pdf",6,3)
+pdf("substitutions_proportion_by_AF.pdf",10,5)
 par(lwd = 0.25)
 layout(matrix(c(1,1,1,1,2), 1, 5, byrow = TRUE))
 barplot(prop_subst, col = rainbow(length(rownames(prop_subst))), space=0, xlab="AF", ylab="Proportion")
