@@ -48,7 +48,7 @@ l = lapply(1:nb_classes, function(i){
   t # return the result
 })
 
-prop_subst = matrix(unlist(l), ncol = af_length, byrow = F)
+prop_subst = matrix(unlist(l), ncol = nb_classes, byrow = F)
 rownames(prop_subst) = c("AG","AC","AT","CA","CG","CT")
 prop_subst = prop_subst[names(sort(apply(prop_subst, 1, var), decreasing = T)),]
 
@@ -59,7 +59,7 @@ par(lwd = 0.25)
 layout(matrix(c(1,1,1,1,2), 1, 5, byrow = TRUE))
 cols = c("purple1","red1","chartreuse2","dodgerblue3","yellow1","chocolate2")
 barplot(prop_subst, col = cols, space=0, xlab="AF", ylab="Proportion")
-axis(1,labels=AF_classes, at=c(0, seq(1:af_length)))
+axis(1,labels=AF_classes, at=c(0, seq(1:nb_classes)))
 plot(1, type="n", axes=FALSE, xlab="", ylab="")
 legend("topright", legend=rownames(prop_subst), col = cols, pch=19)
 dev.off()
