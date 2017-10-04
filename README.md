@@ -24,3 +24,6 @@ cumulative_plot_vcf.r --input_vcf=path_input_vcf_file.vcf
 ```
 
 [Here](https://github.com/tdelhomme/VCF-tips-tricks/blob/master/plots/substitutions_proportion_by_AF.png) is an example of output.  
+
+
+## Piece of codes to analyse annotated VCF files (with annovar to keep only positive samples)
