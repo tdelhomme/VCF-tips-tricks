@@ -27,3 +27,12 @@ cumulative_plot_vcf.r --input_vcf=path_input_vcf_file.vcf
 
 
 ## Piece of codes to analyse annotated VCF files (with annovar to keep only positive samples)
+
+Arguments are the same than previously described.  
+
+Command line example:
+```
+cumulative_plot_annotation.r --input_txt=path_input_vcf_file.vcf
+```
+
+Note: for the moment this only output graph per sample, need to add an option for AF scale.
