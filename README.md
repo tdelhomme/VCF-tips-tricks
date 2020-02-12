@@ -36,3 +36,5 @@ cumulative_plot_annotation.r --input_txt=path_input_vcf_file.vcf
 ```
 
 Note: for the moment this only output graph per sample, need to add an option for AF scale.
+
+## Piece of code to analyze raw VCF files in R
