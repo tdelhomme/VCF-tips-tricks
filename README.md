@@ -1,6 +1,6 @@
 # VCF-tips-tricks
 
-## Piece of codes to analyse VCF files
+## Piece of code to analyze VCF files in R
 
 ### 1. Control the distribution of substitutions
 
@@ -25,8 +25,9 @@ cumulative_plot_vcf.r --input_vcf=path_input_vcf_file.vcf
 
 [Here](https://github.com/tdelhomme/VCF-tips-tricks/blob/master/plots/substitutions_proportion_by_AF.png) is an example of output.  
 
+### 2. Tips for strelka2 VCFs analyzes
 
-## Piece of codes to analyse annotated VCF files (with annovar to keep only positive samples)
+## Piece of code to analyze annotated VCF files (with annovar to keep only positive samples)
 
 Arguments are the same than previously described.  
 
@@ -37,4 +38,3 @@ cumulative_plot_annotation.r --input_txt=path_input_vcf_file.vcf
 
 Note: for the moment this only output graph per sample, need to add an option for AF scale.
 
-## Piece of code to analyze raw VCF files in R
