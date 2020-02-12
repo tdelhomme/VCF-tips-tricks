@@ -27,6 +27,8 @@ cumulative_plot_vcf.r --input_vcf=path_input_vcf_file.vcf
 
 ### 2. Tips for strelka2 VCFs analyzes
 
+[Here]() is a piece of R code that computes the variant allelic fraction of each individual mutation found in a VCF file output of Strelka2 variant caller. Note that the VCF should be compressed with bgzip and indexed with tabix.
+
 ## Piece of code to analyze annotated VCF files (with annovar to keep only positive samples)
 
 Arguments are the same than previously described.  
