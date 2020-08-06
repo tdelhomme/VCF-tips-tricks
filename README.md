@@ -40,3 +40,12 @@ cumulative_plot_annotation.r --input_txt=path_input_vcf_file.vcf
 
 Note: for the moment this only output graph per sample, need to add an option for AF scale.
 
+## 3. Scripts to analyse/modify VCFs
+
+## Correct the REF/ALT in a VCF file
+using [This script](). Some tools like plink does not output (in the vcf) the REF/ALT based on the reference genome but based on the SNP chip fluorescence. This can be problematic when comparing 2 VCF files that should have the same chr-pos-ref (for imputation as an example) or for annovar that requires REF to match the databases. This script takes as input a VCF and an annotation file in order to correct the REF and ALT in the VCF. This annotation file is basically from convert2annovar (or done by hand), for each ID field in the VCF, the informations about the SNP, e.g.:
+```
+chr1	564477	564477	A	G	rs6650104	SNP_A-8575395
+chr1	564621	564621	C	T	rs10458597	SNP_A-8575125
+chr1	565400	565400	C	T	rs8179414	SNP_A-8575389
+```
