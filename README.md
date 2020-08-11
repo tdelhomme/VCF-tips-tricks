@@ -49,3 +49,6 @@ chr1	564477	564477	A	G	rs6650104	SNP_A-8575395
 chr1	564621	564621	C	T	rs10458597	SNP_A-8575125
 chr1	565400	565400	C	T	rs8179414	SNP_A-8575389
 ```
+
+## Extract a list of SNPs (Id field in input VCF) from a VCF (output a new VCF)
+
