@@ -51,4 +51,9 @@ chr1	565400	565400	C	T	rs8179414	SNP_A-8575389
 ```
 
 ## Extract a list of SNPs (Id field in input VCF) from a VCF (output a new VCF)
+The script [extract_snps.R]() takes 3 input parameters:
+- --input_vcf
+- --output_vcf
+- --snps
 
+It creates a new vcf 'output_vcf' by retaining the snps present in the txt file 'snps' from the 'input_vcf' (in the ID field).
