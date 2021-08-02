@@ -69,4 +69,8 @@ The BED file looks like:
 ```
 10	60680	60690	1
 ```
-
+First compress and index the bed if it is not already done:
+```
+bgzip -c bad_regions.bed > bad_regions.bed.gz
+tabix -p bed bad_regions.bed.gz
+```
