@@ -78,3 +78,7 @@ Then create the INFO line that would be added in the header:
 ```
 echo "##INFO=<ID=BAD_REGION,Number=0,Type=Flag,Description="My bad region for some reason">" > bad_regions.bed.hdr
 ```
+Finally, annotate the VCF by adding a new field `BAD_REGION` if the variant is in the bed regions:
+```
+bcftools annotate -a bad_regions.bed.gz -h bad_regions.bed.hdr -c CHROM,FROM,TO,BAD_REGION variants.vcf -Oz -o variants_annotated.vcf.gz
+```
