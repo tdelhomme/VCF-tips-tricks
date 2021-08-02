@@ -82,3 +82,7 @@ Finally, annotate the VCF by adding a new field `BAD_REGION` if the variant is i
 ```
 bcftools annotate -a bad_regions.bed.gz -h bad_regions.bed.hdr -c CHROM,FROM,TO,BAD_REGION variants.vcf -Oz -o variants_annotated.vcf.gz
 ```
+One can also want to filter out the bad regions, for that you can do this:
+```
+bcftools filter variants_annotated.vcf.gz -s BAD_REGION -m+ -e 'INFO/BAD_REGION=1' | bcftools view -f PASS -Oz > variants_annotated_filter.vcf.gz
+```
