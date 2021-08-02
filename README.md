@@ -74,3 +74,7 @@ First compress and index the bed if it is not already done:
 bgzip -c bad_regions.bed > bad_regions.bed.gz
 tabix -p bed bad_regions.bed.gz
 ```
+Then create the INFO line that would be added in the header:
+```
+echo "##INFO=<ID=BAD_REGION,Number=0,Type=Flag,Description="My bad region for some reason">" > bad_regions.bed.hdr
+```
