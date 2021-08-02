@@ -62,3 +62,11 @@ It creates a new vcf 'output_vcf' by retaining the snps present in the txt file 
 
 ### 4.1 Annotate a VCF with BAD_REGION from positions in a bed file
 
+2 files are needed to start:
+* a VCF file (let's assume it is named `variants.vcf`)
+* a BED file (let's assume it is named `bad_regions.bed`)
+The BED file looks like:
+```
+10	60680	60690	1
+```
+
